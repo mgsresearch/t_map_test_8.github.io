@@ -1,119 +1,149 @@
-<!DOCTYPE html>
-<html>
+
+
+<!DOCTYPE HTML>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="description"
-        content="T-map">
-  <meta name="keywords" content="differentiable simulation, rigid body simulation">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>T_map.</title>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
+  <style>
+    a:link {
+      color: rgb(17, 13, 229);
+      background-color: transparent;
+      text-decoration: none;
     }
 
+    a:visited {
+      color: rgb(17, 13, 229);
+      background-color: transparent;
+      text-decoration: none;
+    }
+
+    a:active {
+      color: rgb(17, 13, 229)l;
+      background-color: transparent;
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TE3R48N61V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
-    gtag('config', 'G-PYVRSFMDRL');
+    gtag('config', 'G-TE3R48N61V');
   </script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+  <title>t_map_test</title>
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <!-- <div style="width:1000px;height:1000px;border:1px solid #000; z-index: -900">This is a rectangle!</div> -->
+  <meta name="author" content="Author-1, Author-1, Author">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <!-- <link rel="icon" type="image/png" href="images/Duke_Athletics_logo.png"> -->
+  <!-- <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22></text></svg>"> -->
 </head>
-<body>
+<!-- <div class="v1"></div>
+<div class="v2"></div> -->
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">T_map</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://mgsresearch.github.io/">Author-1</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://mgsresearch.github.io/">Author-1</a><sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://mgsresearch.github.io/">Author-1</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://mgsresearch.github.io/">Author-1</a><sup>2</sup>,
-            </span>
+<body style="background-color:white">
+  <!-- <li class="nav-item ">
+    <a class="nav-link" href="pages/Music.html">
+      Music
+    </a>
+  </li> -->
+  <table
+    style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+      <tr style="padding:10px">
+        <td style="padding:0px">
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr style="padding:0px">
+                
+                <td style="padding:7.5%;width:63%;vertical-align:middle">
+
+                  <p style="text-align:center;">
+                    <name>Geometry-Aware Volumetric Data Stitching Using Local Surface Mapping and Robot Optical Coherence Tomography</name>
+                  </p>
+
+                  <p style=' font-size:medium;'>
+                    Author-1, Author-1, Author-1, Author-1,Author-1, Author-1, Author-1, Author-1,Author-1, Author-1, Author-1, Author-1,Author-1, Author-1, Author-1, Author-1,
+                  </p>
+
+                  <p style=' font-size:medium;'>
+                    Optical coherence tomography (OCT) has been widely used for high-fidelity biological tissue scanning but is traditionally limited to small lateral fields of view that preclude large-area scanning. 
+                    To overcome this problem, we propose an integration of an OCT sensor to a 6-DOF robot arm end-effector combined with a geometry-aware stitching model for surface and volumetric data stitching. 
+                    We firstly develop a simple but efficient Robot-OCT calibration method by using a three-marker calibration pattern and implement an optimization solver. 
+                    Given a pre-defined trajectory, a local planner is developed to update the sensor pose by using the OCT point cloud information in order to maintain the effective imaging depth based on the distance and orientation constraints. 
+                    The system calibration method is verified through repeated experiments with the three-marker targets and the result shows an average testing error of 0.132±0.071 mm. 
+                    The geometry-aware OCT stitching framework is demonstrated based on the experiments of different scanning trajectories and 3D-printed phantoms for large-area scanning.
+                     The OCT stitched point cloud is compared with the ground truth from the phantom CAD model and the result show an average surface alignment error of 0.441±0.241 mm for the path following tasks.
+                  </p>
+
+                </td>
+
+              </tr>
+            </tbody>
+          </table>
+
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:20px;width:100%;vertical-align:middle">
+                
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+            <script type="text/javascript">
+            function toggleNews() {
+                var moreNews = document.getElementById("moreNews");
+                var button = document.getElementById("toggleButton");
+                if (moreNews.style.display === "none") {
+                moreNews.style.display = "block";
+                button.textContent = "Less";
+                } else {
+                moreNews.style.display = "none";
+                button.textContent = "More";
+                }
+            }
+            </script>
+
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:20px;width:100%;vertical-align:middle">
+                  <heading>Videos</heading>
+                  <p style='font-size:medium;'>
+                     Video-1: This research introduces a novel system. 
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+
+          </table>
+
+       
+          <!-- <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
+            <div style="width: 100px; height: 100px; overflow: hidden;">
+              <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=IB1XRs8gTkoPtjnFfHA-hNyZMCNEfgGu5RBzLV-Jz3s"></script>
+            </div>
           </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Duke University,</span>
-          </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-
-
-             abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract
-             abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract
-             abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract
-             abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract
-             abstract abstract abstract abstract abstract abstract abstract abstract abstract abstract
-            
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-
-    <div class="columns is-centered">
-      <div class="column is-two-thirds has-text-centered">
-        <figure class="image is-16by">
-          <img src="./static/images/fig_system_with_phantom.jpg" alt="spotlight">
-        </figure>
-      </div>
-    </div>
-
-    <!-- Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="youtube"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-</section>
-
+           -->
+          
+        </td>
+      </tr>
+  </table>
 </body>
+
 </html>
