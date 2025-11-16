@@ -1,0 +1,75 @@
+
+/* reference with other sources */
+
+body {
+    /* Optional: Centers the whole container on the page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Takes full viewport height */
+    margin: 0;
+    background-color: #000; /* Optional background color */
+}
+
+button-container {
+  display: flex; /* Makes the container a flex container */
+  gap: 20px; /* Adds space between the buttons */
+  /* Optional: further alignment or justification */
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+button {
+  /* Basic button styling */
+  padding: 20px 50px;
+  border: none; /* Removes the border */
+  background: none; /* Removes the background fill */
+  /* padding: 100; Removes default padding if desired, adjust as needed  */
+  cursor: pointer; /* Maintains a pointer cursor for interactivity */
+  /* border: 1px solid #ccc; */
+  /* background-color: #f0f0f0; */
+  /* cursor: pointer; */
+  /* white-space: nowrap; Prevents text from wrapping within the button */
+}
+
+
+video-container {
+    /* position: relative; Establishes positioning context for children */
+    width: 10%; /* Adjust width as needed */
+    max-width: 10px; /* Optional: Sets a maximum width */
+    /* height: auto; */
+    display: flex;
+    align-items: center; /* Centers items vertically */
+    justify-content: center; /* Centers items horizontally */
+    overflow: hidden;
+}
+
+video-background {
+    position: absolute; /* Positions the video relative to the container */
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 10%;
+    object-fit: cover; /* Ensures the video covers the container area */
+    z-index: 0; /* Places video behind the text */
+}
+
+video-overlay-text {
+    position: relative; /* Keeps the text in the normal flow within the flex container */
+    z-index: 1; /* Ensures text is above the video */
+    color: white;
+    text-align: center; /* Centers the text itself horizontally */
+    padding: 20px;
+    /* Optional: Adds a shadow for better readability over the video */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+video-overlay-text h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+video-overlay-text p {
+    font-size: 1.5em;
+    margin: 0;
+}

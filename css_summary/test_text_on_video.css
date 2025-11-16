@@ -1,0 +1,52 @@
+
+/* reference with other sources */
+
+video-overlay-container {
+    /* 1. Establish positioning context for children */
+    position: relative; 
+    width: 50%;
+    height: 30vh; /* Example height; adjust as needed */
+    overflow: hidden;
+}
+
+background-video {
+    /* 2. Position and size the video to fill the container */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 5%;
+    object-fit: cover; /* Ensures the video covers the entire area without distortion */
+    z-index: 0; /* Keep video at the bottom layer */
+}
+
+overlay-content {
+
+    /* 3. Position the text content on top of the video */
+    position: absolute;
+    top: -25%; /* Start positioning from the middle of the container */
+    left: -25%;
+    transform: translate(-50%, -50%); /* Precisely center the element */
+    
+    /* 4. Styling for readability and appearance */
+    color: white; /* Ensure text is readable */
+    text-align: center;
+    padding: 1000px;
+    z-index: 1; /* Ensure text is above the video */
+    
+    /* Optional enhancements for text visibility */
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background for contrast */
+    border-radius: 10px;
+}
+
+/* Optional: Styling for a Call-To-Action button */
+cta-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}

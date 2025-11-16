@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+
+<html>
+    
+    <head>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<title>TumorMap</title>
+		
+		<meta name="viewport" content="width=1000">
+
+        <!-- third-party packages -->
+		<link rel="stylesheet" href="./css_summary/test.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+		<!-- <link rel="icon" href="./reference_video/img_test_1.png" type="image/x-icon"> -->
+
+		<!-- Google tag (gtag.js) -->
+		<!-- <script async="" src="./DP3_files/js"></script> -->
+        
+		<script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-7S6TEJTY63');
+		</script>
+
+		<meta property="og:url" content="https://3d-diffusion-policy.github.io">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="TumorMap">
+		<meta property="og:description" content="This paper introduces the TumorMap system">
+	
+	</head>
+
+    <body id="top" class="" data-new-gr-c-s-check-loaded="14.1141.0" data-gr-ext-installed="">
+
+    <header>
+       
+        <h1 id="header-top" style="margin-top:100px">TumorMap</h1>
+        
+        <h2 style="color: rgba(255, 255, 255, 0.9); font-size:40px; margin-top:-30px"> A Laser-based Surgical Platform for 3D Tumor Mapping and Fully-Automated Tumor Resection</h2>
+        
+        <!-- show the authors of the paper -->
+        <section class="section">
+
+        <div class="container">
+            
+            <div class="columns is-centered">
+            
+                <div class="column is-two-thirds has-text-centered">
+
+                <!-- <h2 class="title is-2">Authors</h2> -->
+
+                <p style="font-size: 1.25em; line-height: 1.6;">
+                    
+                <a href="" target="_blank">Guangshen Ma</a><sup>1,2,†,*</sup>,
+                <a href="" target="_blank">Ravi Prakash</a><sup>1,†,*</sup>,
+                <a href="" target="_blank">Beatrice Schleupner</a><sup>1</sup>,
+                <a href="" target="_blank">Arpit Mishra</a><sup>2</sup>,
+
+                <br>
+
+                <a href="" target="_blank">Junqin Chen</a><sup>1</sup>,
+                <a href="" target="_blank">Brian Mann</a><sup>1</sup>,
+                <a href="" target="_blank">Boyuan Chen</a><sup>1</sup>,
+                <a href="" target="_blank">Leila Bridgeman</a><sup>1</sup>,
+                <a href="" target="_blank">Pei Zhong</a><sup>1</sup>,
+
+                <br>
+
+                <a href="" target="_blank">Mark Draelos</a><sup>3</sup>,
+                <a href="" target="_blank">William C. Eward</a><sup>3</sup>,
+                <a href="" target="_blank">Patrick J. Codd</a><sup>1,6,†</sup>,
+                
+                <br>
+                <br>
+
+                <!-- <sup>*</sup> G. Ma and R. Prakash contributed equally to this work, -->
+                <a href="" target="_blank"><sup>*</sup>G. Ma and R. Prakash contributed equally to this work</a> <br>
+                <a href="" target="_blank"><sup>†</sup>Corresponding email: guangshe@umich.edu, ravi.prakash@duke.edu, patrick.codd@duke.edu.</a> <br>
+                <a href="" target="_blank"><sup>*</sup>Thomas Lord Department of Mechanical Engineering and Materials Science, Duke University</a> <br>
+                <a href="" target="_blank"><sup>*</sup>Department of Orthopaedic Surgery, School of Medicine, Duke University</a> <br>
+                <a href="" target="_blank"><sup>*</sup>Department of Pathology, School of Medicine, Duke University</a> <br>
+                <a href="" target="_blank"><sup>*</sup>Department of Ophthalmology and Visual Sciences, University of Michigan Medical School, Ann Arbor</a> <br>
+                <a href="" target="_blank"><sup>*</sup>Department of Neurosurgery, School of Medicine, Duke University</a> <br>
+                <!-- <p id="unique-text">This text has a unique blue color.</p> -->
+            
+
+                </p>
+
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <div class="buttons">
+        
+            <a href="https://arxiv.org/abs/2511.05723"><div class="button"><i class="ai ai-arxiv"></i>&nbsp;&nbsp;arXiv</div></a>
+            <a href="https://github.com/mgsresearch/tumormap_code"><div class="button"><svg class="svg-inline--fa fa-github fa-w-16" style="width: 20px; height: 20px;" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 -50 484 500" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>&nbsp;&nbsp;Code</div></a>
+            <a href="https://www.braintoollab.com/publications/"><div class="button" style="padding-left:18px"><i class="fas fa-robot"></i>&nbsp;Brain Tool Lab</div></a>
+
+        </div>
+        
+    </header>
+
+    <main id="main-content">
+        
+	<div style="padding-bottom:1em; padding-top: 5em; width: 60em; max-width: 70em; margin-left: auto; margin-right: auto;">
+
+    <section>
+
+        <h1 style="text-align: center; margin-bottom: 0; color: #27a2c3; font-size: 3.5em;">TumorMap</h1>
+        <h2 style="text-align: center; color: #27a2c3;; font-size:30px; margin-top:-10px">Fully-automated tumor surgery by using a three-laser framework</h2>
+
+        <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+            <div class="column is-two-thirds has-text-centered">
+
+               <a href="" target="_blank">Guangshen Ma</a><sup>1,2,†,*</sup>,
+                <a href="" target="_blank">Ravi Prakash</a><sup>1,†,*</sup>,
+                <a href="" target="_blank">Beatrice Schleupner</a><sup>1</sup>,
+                <a href="" target="_blank">Arpit Mishra</a><sup>2</sup>,
+
+                <br>
+
+                <a href="" target="_blank">Junqin Chen</a><sup>1</sup>,
+                <a href="" target="_blank">Brian Mann</a><sup>1</sup>,
+                <a href="" target="_blank">Boyuan Chen</a><sup>1</sup>,
+                <a href="" target="_blank">Leila Bridgeman</a><sup>1</sup>,
+                <a href="" target="_blank">Pei Zhong</a><sup>1</sup>,
+
+                <br>
+
+                <a href="" target="_blank">Mark Draelos</a><sup>3</sup>,
+                <a href="" target="_blank">William C. Eward</a><sup>3</sup>,
+                <a href="" target="_blank">Patrick J. Codd</a><sup>1,6,†</sup>,
+                
+                <br>
+                <!-- <br> -->
+
+                <!-- <sup>*</sup> G. Ma and R. Prakash contributed equally to this work, -->
+                <a href="" target="_blank"><sup>*</sup>G. Ma and R. Prakash contributed equally to this work</a> <br>
+                <a href="" target="_blank"><sup>†</sup>Corresponding email: guangshe@umich.edu, ravi.prakash@duke.edu, patrick.codd@duke.edu.</a> <br>
+                <a href="" target="_blank"><sup>*</sup>Thomas Lord Department of Mechanical Engineering and Materials Science, Duke University</a> <br>
+                <a href="" target="_blank"><sup>*</sup>Department of Orthopaedic Surgery, School of Medicine, Duke University</a> <br>
+                <a href="" target="_blank"><sup>*</sup>Department of Pathology, School of Medicine, Duke University</a> <br>
+                <a href="" target="_blank"><sup>*</sup>Department of Ophthalmology and Visual Sciences, University of Michigan Medical School, Ann Arbor</a> <br>
+                <a href="" target="_blank"><sup>*</sup>Department of Neurosurgery, School of Medicine, Duke University</a> <br>
+                <!-- <p id="unique-text">This text has a unique blue color.</p> -->
+
+                <br>
+
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <p> 
+            <b style="font-weight:800;">Abstract.</b>
+            Surgical resection of malignant solid tumors is critically dependent on the surgeon’s ability to accurately identify pathological
+            tissue and remove the tumor while preserving surrounding healthy structures. However, building an intraoperative 3D tumor model
+            for subsequent removal faces major challenges due to the lack of high-fidelity tumor reconstruction, difficulties in developing
+            generalized tissue models to handle the inherent complexities of tumor diagnosis, and the natural physical limitations of bimanual
+            operation, physiologic tremor, and fatigue creep during surgery. To overcome these challenges, we introduce “TumorMap", a
+            surgical robotic platform to formulate intraoperative 3D tumor boundaries and achieve autonomous tissue resection using a set of
+            multifunctional lasers. TumorMap integrates a three-laser mechanism (optical coherence tomography, laser-induced endogenous
+            fluorescence, and cutting laser scalpel) combined with deep learning models to achieve fully-automated and noncontact tumor
+            resection. We validated TumorMap in murine osteoscarcoma and soft-tissue sarcoma tumor models, and established a novel
+            histopathological workflow to estimate sensor performance. With submillimeter laser resection accuracy, we demonstrated
+            multimodal sensor-guided autonomous tumor surgery without any human intervention.
+        </p>
+
+        <!-- attach the main video  -->
+        <video autoplay="" controls="" muted="" loop="" style="width: 100%; margin-left: 0%;" preload="metadata"><source src="./reference_video/Movie S1 (main video) submit.mp4" type="video/mp4"> </video>
+
+    </section>
+
+    <hr style="margin-top: 1em;">
+    
+    <h2>Murine tumor resection workflow</h2>
+    
+    <div class="box alt" style="margin-bottom: 1em;">
+
+        <p>
+            <b>Summary:</b> Tumor boundary estimation to resection. a: The offline workflow of building the tumor classifiers by using the TumorID sensor. Before the online tumor resection, the tumor classifiers are trained with the TumorID datasets of the soft
+            tissue sarcoma (STS) and osteosarcoma sarcoma (OS) murine models (Method. 4.5.3). Specifically, the dissected tumors and healthy samples are first placed at the surgical site. The TumorID is controlled by the robot to collect spectrum data following a raster scanning. 
+            The tumor classifier is represented by a multilayer perceptron model for binary classifications and used for online tumor resection (in step c). 
+        </p>
+
+        <!-- attach the main video  -->
+        <video autoplay="" controls="" muted="" loop="" style="width: 100%; margin-left: 0%;" preload="metadata"><source src="./reference_video/Movie S2 (main workflow).mp4" type="video/mp4"> </video>
+            
+    </div>
+
+    <h3>Efficient data collection method</h3>
+    
+    <div class="box alt" style="margin-bottom: 1em;">
+
+        <p>
+            <b>Summary:</b> Tumor boundary estimation to resection. a: The offline workflow of building the tumor classifiers by using the TumorID sensor. Before the online tumor resection, the tumor classifiers are trained with the TumorID datasets of the soft
+            tissue sarcoma (STS) and osteosarcoma sarcoma (OS) murine models (Method. 4.5.3). Specifically, the dissected tumors and healthy samples are first placed at the surgical site. The TumorID is controlled by the robot to collect spectrum data following a raster scanning. 
+            The tumor classifier is represented by a multilayer perceptron model for binary classifications and used for online tumor resection (in step c). 
+        </p>
+
+        <!-- attach the main video  -->
+        <video autoplay="" controls="" muted="" loop="" style="width: 100%; margin-left: 0%;" preload="metadata"><source src="./reference_video/Movie S3 (data collection method).mp4" type="video/mp4"> </video>
+            
+    </div>
+
+    <h4>Efficient data collection method</h4>
+    
+    <div class="box alt" style="margin-bottom: 1em;">
+
+        <p>
+            <b>Summary:</b> Tumor boundary estimation to resection. a: The offline workflow of building the tumor classifiers by using the TumorID sensor. Before the online tumor resection, the tumor classifiers are trained with the TumorID datasets of the soft
+            tissue sarcoma (STS) and osteosarcoma sarcoma (OS) murine models (Method. 4.5.3). Specifically, the dissected tumors and healthy samples are first placed at the surgical site. The TumorID is controlled by the robot to collect spectrum data following a raster scanning. 
+            The tumor classifier is represented by a multilayer perceptron model for binary classifications and used for online tumor resection (in step c). 
+        </p>
+
+        <!-- attach the main video  -->
+        <video autoplay="" controls="" muted="" loop="" style="width: 100%; margin-left: 0%;" preload="metadata"><source src="./reference_video/Movie S4 (ex vivo experiments).mp4" type="video/mp4"> </video>
+            
+    </div>
+
+    <div class="box alt" style="margin-bottom: 1em;">
+
+        <p>
+            <b>Summary:</b> Tumor boundary estimation to resection. a: The offline workflow of building the tumor classifiers by using the TumorID sensor. Before the online tumor resection, the tumor classifiers are trained with the TumorID datasets of the soft
+            tissue sarcoma (STS) and osteosarcoma sarcoma (OS) murine models (Method. 4.5.3). Specifically, the dissected tumors and healthy samples are first placed at the surgical site. The TumorID is controlled by the robot to collect spectrum data following a raster scanning. 
+            The tumor classifier is represented by a multilayer perceptron model for binary classifications and used for online tumor resection (in step c). 
+        </p>
+
+        <!-- attach the main video  -->
+        <video autoplay="" controls="" muted="" loop="" style="width: 100%; margin-left: 0%;" preload="metadata"><source src="./reference_video/Movie S5 (mice experiments).mp4" type="video/mp4"> </video>
+            
+    </div>
+
+    <div class="box alt" style="margin-bottom: 1em;">
+
+        <p>
+            <b>Summary:</b> Tumor boundary estimation to resection. a: The offline workflow of building the tumor classifiers by using the TumorID sensor. Before the online tumor resection, the tumor classifiers are trained with the TumorID datasets of the soft
+            tissue sarcoma (STS) and osteosarcoma sarcoma (OS) murine models (Method. 4.5.3). Specifically, the dissected tumors and healthy samples are first placed at the surgical site. The TumorID is controlled by the robot to collect spectrum data following a raster scanning. 
+            The tumor classifier is represented by a multilayer perceptron model for binary classifications and used for online tumor resection (in step c). 
+        </p>
+
+        <!-- attach the main video  -->
+        <video autoplay="" controls="" muted="" loop="" style="width: 100%; margin-left: 0%;" preload="metadata"><source src="./reference_video/Movie S6 (histopathology experiments).mp4" type="video/mp4"> </video>
+            
+    </div>
+
+    <p>
+        <b>Mice tumor experiment: tumor mapping and boundary formulation</b>
+    </p>
+
+    <div class="row 50% uniform" style="width: 100%; margin-top:-20px">
+        
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;" preload="metadata"><source src="./demo_main/cg/oct.mp4" type="video/mp4"> </video>
+            <a href="https://robomimic.github.io/">OCT map</a>
+        </div>
+        
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;"><source src="./demo_main/cg/tag.mp4" type="video/mp4"> </video>
+            <a href="https://implicitbc.github.io/">Tumor tags</a>
+        </div>
+
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;"><source src="./demo_main/cg/bg.mp4" type="video/mp4"> </video>
+            <a href="https://diffusion-policy.cs.columbia.edu/">Tumor boundary</a>
+        </div>
+        
+    </div>
+
+    <div class="row 50% uniform" style="width: 100%; margin-top:-20px">
+        
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;" preload="metadata"><source src="./demo_main/cr/oct.mp4" type="video/mp4"> </video>
+            <a href="https://robomimic.github.io/">OCT map</a>
+        </div>
+        
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;"><source src="./demo_main/cr/tag.mp4" type="video/mp4"> </video>
+            <a href="https://implicitbc.github.io/">Tumor tags</a>
+        </div>
+
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;"><source src="./demo_main/cr/bg.mp4" type="video/mp4"> </video>
+            <a href="https://diffusion-policy.cs.columbia.edu/">Tumor boundary</a>
+        </div>
+        
+    </div>
+
+    <div class="row 50% uniform" style="width: 100%; margin-top:-20px">
+        
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;" preload="metadata"><source src="./demo_main/pg/oct.mp4" type="video/mp4"> </video>
+            <a href="https://robomimic.github.io/">OCT map</a>
+        </div>
+        
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;"><source src="./demo_main/pg/tag.mp4" type="video/mp4"> </video>
+            <a href="https://implicitbc.github.io/">Tumor tags</a>
+        </div>
+
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;"><source src="./demo_main/pg/boundary.mp4" type="video/mp4"> </video>
+            <a href="https://diffusion-policy.cs.columbia.edu/">Tumor boundary</a>
+        </div>
+        
+    </div>
+
+    <div class="row 50% uniform" style="width: 100%; margin-top:-20px">
+        
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;" preload="metadata"><source src="./demo_main/pr/oct.mp4" type="video/mp4"> </video>
+            <a href="https://robomimic.github.io/">OCT map</a>
+        </div>
+        
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;"><source src="./demo_main/pr/tag.mp4" type="video/mp4"> </video>
+            <a href="https://implicitbc.github.io/">Tumor tags</a>
+        </div>
+
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;"><source src="./demo_main/pr/bg.mp4" type="video/mp4"> </video>
+            <a href="https://diffusion-policy.cs.columbia.edu/">Tumor boundary</a>
+        </div>
+        
+    </div>
+
+    <p>
+        <b>Ex vivo tissue experiment: tumor mapping and boundary formulation</b>
+    </p>
+
+    <div class="row 50% uniform" style="width: 100%; margin-top:-20px">
+        
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;" preload="metadata"><source src="./demo_main/cg/oct.mp4" type="video/mp4"> </video>
+            <a href="https://robomimic.github.io/">OCT map</a>
+        </div>
+        
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;"><source src="./demo_main/cg/tag.mp4" type="video/mp4"> </video>
+            <a href="https://implicitbc.github.io/">Tumor tags</a>
+        </div>
+
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;"><source src="./demo_main/cg/bg.mp4" type="video/mp4"> </video>
+            <a href="https://diffusion-policy.cs.columbia.edu/">Tumor boundary</a>
+        </div>
+        
+    </div>
+
+    <div class="row 50% uniform" style="width: 100%; margin-top:-20px">
+        
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;" preload="metadata"><source src="./demo_main/cr/oct.mp4" type="video/mp4"> </video>
+            <a href="https://robomimic.github.io/">OCT map</a>
+        </div>
+        
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;"><source src="./demo_main/cr/tag.mp4" type="video/mp4"> </video>
+            <a href="https://implicitbc.github.io/">Tumor tags</a>
+        </div>
+
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;"><source src="./demo_main/cr/bg.mp4" type="video/mp4"> </video>
+            <a href="https://diffusion-policy.cs.columbia.edu/">Tumor boundary</a>
+        </div>
+        
+    </div>
+
+    <div class="row 50% uniform" style="width: 100%; margin-top:-20px">
+        
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;" preload="metadata"><source src="./demo_main/pg/oct.mp4" type="video/mp4"> </video>
+            <a href="https://robomimic.github.io/">OCT map</a>
+        </div>
+        
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;"><source src="./demo_main/pg/tag.mp4" type="video/mp4"> </video>
+            <a href="https://implicitbc.github.io/">Tumor tags</a>
+        </div>
+
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;"><source src="./demo_main/pg/boundary.mp4" type="video/mp4"> </video>
+            <a href="https://diffusion-policy.cs.columbia.edu/">Tumor boundary</a>
+        </div>
+        
+    </div>
+
+    <div class="row 50% uniform" style="width: 100%; margin-top:-20px">
+        
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;" preload="metadata"><source src="./demo_main/pr/oct.mp4" type="video/mp4"> </video>
+            <a href="https://robomimic.github.io/">OCT map</a>
+        </div>
+        
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;"><source src="./demo_main/pr/tag.mp4" type="video/mp4"> </video>
+            <a href="https://implicitbc.github.io/">Tumor tags</a>
+        </div>
+
+        <div class="2u" style="font-size: 0.9em; line-height: 1.5em; text-align: center; width: 30%">
+            <video autoplay="" loop="" muted="" playsinline="" style="width: 100%; margin-right: 5%;"><source src="./demo_main/pr/bg.mp4" type="video/mp4"> </video>
+            <a href="https://diffusion-policy.cs.columbia.edu/">Tumor boundary</a>
+        </div>
+        
+    </div>
